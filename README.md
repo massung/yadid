@@ -7,17 +7,17 @@ Yadid is a [Visual Studio Code][vscode] extension for the [8th][8th] programming
 Forth - and its derivatives - are actually quite frustrating to make an effective extension and syntax highlighter for. This is because they have little-to-no syntax and are very context dependent. For this reason, Yadid's primary goals are to provide:
 
 * Context-aware syntax highlighting
-* Quick running the current file as an 8th script
+* Quick running of the current file as an 8th script
 * Building the project in the current workspace
 
 ### Context-Aware Syntax Highlighting
 
-Yadid's syntax highlighting has no intention - nor will it ever - of highlighting every known word in the dictionary. I personally believe this is not only difficult to maintain, but an eye sore and not effective. It would like a C syntax highlighter only calling attention to the libc functions and nothing else. Of what use is that to anyone? Instead, Yadid highlights words that fit one of the following criteria:
+Yadid's syntax highlighting has no intention - nor will it ever - of highlighting every known word in the dictionary. I personally believe this is not only difficult to maintain, but an eye sore and not effective. It would be like a C syntax highlighter only calling attention to the libc functions and nothing else. Of what use is that to anyone? Instead, Yadid highlights words that fit one of the following criteria:
 
 * Defining words (e.g. `:`, `var`, `ns:`, `constant`)
 * State-changing words (e.g. `(`, `;`)
-* Immediate words (e.g. `'`, `p:`)
-* Control-flow words (e.g. `if`, `while`, `again`)
+* Immediate and parsing words (e.g. `needs`, `'`, `p:`, `with:`)
+* Control-flow words (e.g. `if`, `then`, `while`, `again`)
 * Exiting words (e.g. `null;`, `;if`)
 
 In addition, because Yadid is picky about this, it can go further and only highlight those words _in the state(s) they are legally allowed to be used in!_ This is where Yadid shines. For example, consider the following animation of code being edited and notice how the highlighting changes based on the state:
@@ -42,7 +42,7 @@ This extension assumes you have `8th` installed, that it exists in your `PATH` s
 
 ## Known Issues and Quirks
 
-In order to guarantee that what's highlighted is correct, there are a couple areas where what _isn't_ highlighted is valid 8th, but doesn't show that way:
+In order to guarantee that what's highlighted is valid 8th code, there are a couple areas where what _isn't_ highlighted is valid 8th, but doesn't show that way. Put another way, there may be a few cases that present false negatives, but there should be no false positives.
 
 Literal arrays and map items not padding the `,` delimiter:
 
@@ -60,14 +60,15 @@ foo  \ valid 8th, but won't highlight correctly
 
 Regular expressions are distinguished from `n:/` by assuming that any `/` paired with another `/` _with no whitespace between them_ is a regular expression. Of course, this means that a regular expression with whitespace in it won't highlight correctly.
 
-The effort required to correct these (very minor) issues would be untenable, though. I can't see myself putting in the effort.
+The effort required to correct these (very minor) issues would be untenable, though. I can't see myself even attempting to do so.
 
 ## Future Plans
 
-There are a couple features that I'd still plan on adding:
+There are a couple features that I still plan on adding:
 
-* Highlighting stack notation comments (e.g. `\ n1 n2 -- n3`)
-* Identify comments used for word definition help and highlight them
+* Highlight words that are in the wrong state as errors
+* Color stack notation comments to show the inputs/outputs
+* Identify comments used for help text and color them differently
 * Run script in an external shell as opposed to the embedded terminal
 * Somehow add user-defined immediate words (`i:`) as to-be-highlighted
 
