@@ -12,7 +12,7 @@
 		"url": "https://github.com/massung/yadid.git"
 	},
 	"description": "8th language support for VSCode",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.38.0"
 	},
