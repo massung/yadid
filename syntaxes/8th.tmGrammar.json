@@ -1,0 +1,295 @@
+{
+    "scopeName": "source.8th",
+    "patterns": [
+        {
+            "include": "#interpret-mode"
+        }
+    ],
+    "repository": {
+        "interpret-mode": {
+            "patterns": [
+                {
+                    "include": "#literals"
+                },
+                {
+                    "include": "#characters"
+                },
+                {
+                    "include": "#regexps"
+                },
+                {
+                    "include": "#declarations"
+                },
+                {
+                    "include": "#needs"
+                },
+                {
+                    "include": "#words"
+                },
+                {
+                    "include": "#with-ns"
+                }
+            ]
+        },
+        "compile-mode": {
+            "patterns": [
+                {
+                    "include": "#literals"
+                },
+                {
+                    "include": "#characters"
+                },
+                {
+                    "include": "#regexps"
+                },
+                {
+                    "include": "#control-flow"
+                },
+                {
+                    "include": "#with-ns"
+                }
+            ]
+        },
+        "literals": {
+            "patterns": [
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#anons"
+                },
+                {
+                    "include": "#xts"
+                },
+                {
+                    "include": "#backticks"
+                },
+                {
+                    "include": "#double-backticks"
+                },
+                {
+                    "include": "#numbers"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#arrays"
+                },
+                {
+                    "include": "#maps"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "include": "#decimal"
+                },
+                {
+                    "include": "#hex"
+                },
+                {
+                    "include": "#octal"
+                },
+                {
+                    "include": "#binary"
+                },
+                {
+                    "include": "#float"
+                }
+            ]
+        },
+        "words": {
+            "begin": "(?<=^|\\s|\\[|\\{)(i?:)\\s+([^/\"\\[\\{]\\S*)",
+            "end": "(?<=^|\\s|\\[|\\{)(;)(?=\\s|$)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#compile-mode"
+                }
+            ]
+        },
+        "anons": {
+            "begin": "(?<=^|\\s|\\[|\\{)(\\()(?=\\s|$)",
+            "end": "(?<=^|\\s|\\[|\\{)(\\))(?=\\s|$)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#compile-mode"
+                }
+            ]
+        },
+        "backticks": {
+            "begin": "(?<=^|\\s|\\[|\\{)(`)(?=\\s|$)",
+            "end": "(?<=^|\\s|\\[|\\{)(`)(?=\\s|$)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#interpret-mode"
+                }
+            ]
+        },
+        "double-backticks": {
+            "begin": "(?<=^|\\s|\\[|\\{)(``)(?=\\s|$)",
+            "end": "(?<=^|\\s|\\[|\\{)(``)(?=\\s|$)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#interpret-mode"
+                }
+            ]
+        },
+        "arrays": {
+            "begin": "\\[",
+            "end": "\\]",
+            "patterns": [
+                {
+                    "include": "#literals"
+                }
+            ]
+        },
+        "maps": {
+            "begin": "\\{",
+            "end": "\\}",
+            "patterns": [
+                {
+                    "include": "#literals"
+                }
+            ]
+        },
+        "comments": {
+            "match": "\\\\(?:\\s.*|$)",
+            "name": "comment.line"
+        },
+        "constants": {
+            "match": "(?<=^|\\s|\\[|\\{)(?:true|false|null)(?=\\s|$)",
+            "name": "constant.language"
+        },
+        "xts": {
+            "match": "(?<=^|\\s|\\[|\\{)('|p:)\\s+([^/\"\\[\\{]\\S*)",
+            "captures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            }
+        },
+        "decimal": {
+            "match": "(?:^|\\s|\\[|\\{)[+-]?#\\d+B?(?=\\s|$)",
+            "name": "constant.numeric"
+        },
+        "hex": {
+            "match": "(?:^|\\s|\\[|\\{)[+-]?(?:\\$|0[xX])\\h+(?=\\s|$)",
+            "name": "constant.numeric"
+        },
+        "octal": {
+            "match": "(?:^|\\s|\\[|\\{)[+-]?\\&[0-7]+(?=\\s|$)",
+            "name": "constant.numeric"
+        },
+        "binary": {
+            "match": "(?:^|\\s|\\[|\\{)[+-]?\\%[01]+(?=\\s|$)",
+            "name": "constant.numeric"
+        },
+        "float": {
+            "match": "(?:^|\\s|\\[|\\{)[+-]?\\d+(?:\\.\\d*)?(?:[eE][+-]?\\d+)?F?(?=\\s|$)",
+            "name": "constant.numeric"
+        },
+        "characters": {
+            "match": "(?:^|\\s)'\\S(?=\\s|$)",
+            "name": "constant.numeric"
+        },
+        "strings": {
+            "match": "\"(?:\\\"|[^\"])*?\"",
+            "name": "string.quoted.double"
+        },
+        "regexps": {
+            "match": "/(?:/|\\S(?:\\.|[^/])*)/",
+            "name": "string.regexp"
+        },
+        "needs": {
+            "match": "(?:^|\\s|\\[|\\{)(ns:|needs)\\s+([^/\"\\[\\{]\\S*)",
+            "captures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "variable.language"
+                }
+            }
+        },
+        "declarations": {
+            "match": "(?:^|\\s|\\[|\\{)(var,?|constant)\\s+([^/\"\\[\\{]\\S*)",
+            "captures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "variable.parameter"
+                }
+            }
+        },
+        "control-flow": {
+            "match": "(?<=^|\\s|\\[|\\{)(?:if;?|else|;?then|;;;?|null;|again|while|repeat)(?=\\s|$)",
+            "name": "keyword.control"
+        },
+        "with-ns": {
+            "match": "(?<=^|\\s|\\[|\\{)(?:(;with)(?=\\s|$)|(with:)\\s+([^/\"\\[\\{]\\S*))",
+            "captures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "keyword"
+                },
+                "3": {
+                    "name": "variable.language"
+                }
+            }
+        }
+    }
+}

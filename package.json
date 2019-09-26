@@ -1,0 +1,109 @@
+{
+	"name": "yadid",
+	"displayName": "Yadid",
+	"license": "MIT",
+	"author": {
+		"name": "Jeffrey Massung"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/massung/yadid.git"
+	},
+	"description": "8th language support for VSCode",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.38.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onCommand:yadid.run.file",
+		"onCommand:yadid.run.fileWithArgs",
+		"onCommand:yadid.build.project",
+		"onCommand:yadid.build.projectWithGUI"
+	],
+	"keywords": [
+		"8th",
+		"Forth"
+	],
+	"main": "./out/yadidMain.js",
+	"configuration": {},
+	"contributes": {
+		"commands": [
+			{
+				"command": "yadid.run.file",
+				"title": "Run File",
+				"when": "editorLangId == '8th'",
+				"category": "8th"
+			},
+			{
+				"command": "yadid.run.fileWithArgs",
+				"title": "Run File with Arguments",
+				"when": "editorLangId == '8th'",
+				"category": "8th"
+			},
+			{
+				"command": "yadid.build.project",
+				"title": "Build Project",
+				"when": "editorLangId == '8th'",
+				"category": "8th"
+			},
+			{
+				"command": "yadid.build.projectWithGUI",
+				"title": "Launch Build GUI",
+				"when": "editorLangId == '8th'",
+				"category": "8th"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "F6",
+				"command": "yadid.run.file",
+				"when": "editorLangId == '8th'"
+			},
+			{
+				"key": "ctrl+F6",
+				"command": "yadid.run.fileWithArgs",
+				"when": "editorLangId == '8th'"
+			},
+			{
+				"key": "ctrl+shift+b",
+				"command": "yadid.build.project",
+				"when": "editorLangId == '8th'"
+			}
+		],
+		"languages": [
+			{
+				"id": "8th",
+				"extensions": [
+					".8th"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "8th",
+				"scopeName": "source.8th",
+				"path": "./syntaxes/8th.tmGrammar.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.38.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.2.0"
+	}
+}
