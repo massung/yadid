@@ -2,6 +2,7 @@
 	"name": "yadid",
 	"displayName": "Yadid",
 	"license": "MIT",
+	"publisher": "massung",
 	"author": {
 		"name": "Jeffrey Massung"
 	},
