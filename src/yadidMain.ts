@@ -5,6 +5,9 @@ import { delimiter, join } from 'path';
 /* When last prompted for command line arguments, these are what were used. */
 let lastCmdLineArgs = '';
 
+/* Open terminal for run/build. */
+let terminal: vscode.Terminal | undefined = undefined;
+
 /* Extension is being loaded, register commands, etc.
  */
 export function activate(context: vscode.ExtensionContext) {
@@ -169,7 +172,10 @@ function getCurrentWorkspaceFolder(): Thenable<vscode.WorkspaceFolder | undefine
  */
 function runFile(args: string = '') {
 	let editor = vscode.window.activeTextEditor;
-	let terminal = vscode.window.createTerminal('8th');
+
+	if (!terminal) {
+		terminal = vscode.window.createTerminal('8th');
+	}
 
 	if (editor && editor.document.isDirty) {
 		editor.document
@@ -191,7 +197,9 @@ function runFile(args: string = '') {
 /* Executes the build project command in the terminal.
  */
 function buildProject(buildBinary: string, folder: vscode.WorkspaceFolder, flags: string) {
-	let terminal = vscode.window.createTerminal('8th');
+	if (!terminal) {
+		terminal = vscode.window.createTerminal('8th');
+	}
 
 	if (terminal) {
 		terminal.show();
