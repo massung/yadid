@@ -1,6 +1,6 @@
 # Yadid
 
-Yadid is a [Visual Studio Code][vscode] extension for the [8th][8th] programming langauge. Yadid ("friend" in Hebrew) gets its name from the fact that 8th's creator - [Ron Aaron][ron] - lives in Israel, and I like to think of this extension as a programmer's friend.
+Yadid is a [Visual Studio Code][vscode] extension for the [8th][8th] programming langauge. Yadid ("friend" in Hebrew) gets its name from the fact that 8th's creator - [Ron Aaron][ron] - lives in Israel, and I like to think of this extension as a friendly contribution to the community.
 
 ## Features
 
@@ -73,17 +73,15 @@ There are a couple features that I'd still plan on adding:
 
 ## Bugs and Feature Requests
 
-If you find something that you think is wrong or have a feature request, feel free to open up an issue on [GitHub][issues].
-
-Also, if you find this extension helpful and want to give a shout-out, a great place to do so would be on the [8th forums][forums]!
+If you find something that you think is wrong or have a feature request, feel free to open up an issue on [GitHub][issues]. Also, if you find this extension helpful and want to give a shout-out, a great place to do so would be on the [8th forums][forums]!
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.1.0
 
-Initial release of Yadid
+Initial release of Yadid to the world...
 
 
 
