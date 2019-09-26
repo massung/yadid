@@ -6,6 +6,7 @@
 	"author": {
 		"name": "Jeffrey Massung"
 	},
+	"icon": "8th-logo.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/massung/yadid.git"
