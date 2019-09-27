@@ -210,8 +210,16 @@
             ]
         },
         "comments": {
-            "match": "\\\\(?:\\s.*|$)",
-            "name": "comment.line"
+            "match": "(?:\\\\|--)(?:\\s+([wsd]:)(\\s.*|$))?(?:\\s.*|$)",
+            "name": "comment.line",
+            "captures": {
+                "1": {
+                    "name": "markup.heading.1"
+                },
+                "2": {
+                    "name": "comment.block.documentation"
+                }
+            }
         },
         "constants": {
             "match": "(?<=^|\\s|\\[|\\{)(?:true|false|null)(?=\\s|$)",

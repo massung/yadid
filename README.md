@@ -2,6 +2,8 @@
 
 Yadid is a [Visual Studio Code][vscode] extension for the [8th][8th] programming langauge. Yadid ("friend" in Hebrew) gets its name from the fact that 8th's creator - [Ron Aaron][ron] - lives in Israel, and I like to think of this extension as a friendly contribution to the community.
 
+> _Note: Since 8th libraries do not use the `.8th` file extension, I also highly recommend installing the [Modelines][modelines] extension, which will let you identify 8th your source code to [VSCode][vscode] from within the source files themselves (like Vim and Emacs)._
+
 ## Features
 
 Forth - and its derivatives - are actually quite frustrating to make an effective extension and syntax highlighter for. This is because they have little-to-no syntax and are very context dependent. For this reason, Yadid's primary goals are to provide:
@@ -67,8 +69,6 @@ The effort required to correct these (very minor) issues would be untenable, tho
 There are a couple features that I still plan on adding:
 
 * Highlight words that are in the wrong state as errors
-* Color stack notation comments to show the inputs/outputs
-* Identify comments used for help text and color them differently
 * Run script in an external shell as opposed to the embedded terminal
 * Somehow add user-defined immediate words (`i:`) as to-be-highlighted
 
@@ -76,18 +76,10 @@ There are a couple features that I still plan on adding:
 
 If you find something that you think is wrong or have a feature request, feel free to open up an issue on [GitHub][issues]. Also, if you find this extension helpful and want to give a shout-out, a great place to do so would be on the [8th forums][forums]!
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 0.1.0
-
-Initial release of Yadid to the world...
-
-
 
 [vscode]: https://code.visualstudio.com/
 [8th]: https://8th-dev.com/
 [ron]: https://8th-dev.com/aboutus#ron
 [forums]: https://8th-dev.com/forum
 [issues]: https://github.com/massung/yadid/issues
+[modelines]: https://marketplace.visualstudio.com/items?itemName=chrislajoie.vscode-modelines
