@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.1.3
+
+- Added `--` documentation comments
+
 ## 0.1.2
 
 - Added `defer:`, `#if`, `#else`, and `#then` to highlighted words
