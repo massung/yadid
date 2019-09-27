@@ -21,6 +21,9 @@
                     "include": "#declarations"
                 },
                 {
+                    "include": "#defers"
+                },
+                {
                     "include": "#needs"
                 },
                 {
@@ -28,6 +31,9 @@
                 },
                 {
                     "include": "#with-ns"
+                },
+                {
+                    "include": "#conditional-comp"
                 }
             ]
         },
@@ -47,6 +53,9 @@
                 },
                 {
                     "include": "#with-ns"
+                },
+                {
+                    "include": "#conditional-comp"
                 }
             ]
         },
@@ -262,6 +271,17 @@
                 }
             }
         },
+        "defers": {
+            "match": "(?<=^|\\s|\\[|\\{)(defer:)\\s+([^/\"\\[\\{]\\S*)",
+            "captures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            }
+        },
         "declarations": {
             "match": "(?:^|\\s|\\[|\\{)(var,?|constant)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
@@ -276,6 +296,10 @@
         "control-flow": {
             "match": "(?<=^|\\s|\\[|\\{)(?:if;?|else|;?then|;;;?|null;|again|while|repeat)(?=\\s|$)",
             "name": "keyword.control"
+        },
+        "conditional-comp": {
+            "match": "(?<=^|\\s|\\[|\\{)(?:#if|#else|#then)(?=\\s|$)",
+            "name": "support.function"
         },
         "with-ns": {
             "match": "(?<=^|\\s|\\[|\\{)(?:(;with)(?=\\s|$)|(with:)\\s+([^/\"\\[\\{]\\S*))",
