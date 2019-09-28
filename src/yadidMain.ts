@@ -173,9 +173,12 @@ function getCurrentWorkspaceFolder(): Thenable<vscode.WorkspaceFolder | undefine
 function runFile(args: string = '') {
 	let editor = vscode.window.activeTextEditor;
 
-	if (!terminal) {
-		terminal = vscode.window.createTerminal('8th');
+	if (terminal) {
+		terminal.dispose();
 	}
+
+	// create a new terminal
+	terminal = vscode.window.createTerminal('8th');
 
 	if (editor && editor.document.isDirty) {
 		editor.document
@@ -197,9 +200,12 @@ function runFile(args: string = '') {
 /* Executes the build project command in the terminal.
  */
 function buildProject(buildBinary: string, folder: vscode.WorkspaceFolder, flags: string) {
-	if (!terminal) {
-		terminal = vscode.window.createTerminal('8th');
+	if (terminal) {
+		terminal.dispose();
 	}
+
+	// create a new terminal
+	terminal = vscode.window.createTerminal('8th');
 
 	if (terminal) {
 		terminal.show();
