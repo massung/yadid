@@ -2,6 +2,12 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.1.5
+
+- Added `locals:` to interpret state keyword list
+- Added `recurse` to the compile state control-flow list
+- Added support for complex literals
+
 ## 0.1.4
 
 - When running/building, dispose and create a new terminal

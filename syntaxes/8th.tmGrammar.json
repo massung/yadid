@@ -9,6 +9,9 @@
         "interpret-mode": {
             "patterns": [
                 {
+                    "include": "#locals"
+                },
+                {
                     "include": "#literals"
                 },
                 {
@@ -95,6 +98,9 @@
         },
         "numbers": {
             "patterns": [
+                {
+                    "include": "#complex"
+                },
                 {
                     "include": "#decimal"
                 },
@@ -236,6 +242,10 @@
                 }
             }
         },
+        "complex": {
+            "match": "(?:^|\\s|\\[|\\{)\\d+(?:\\.\\d*)?(?:[eE][+-]?\\d+)[-+]\\d+(?:\\.\\d*)?(?:[eE][+-]?\\d+)?i(?=\\s|$)",
+            "name": "constant.numeric"
+        },
         "decimal": {
             "match": "(?:^|\\s|\\[|\\{)[+-]?#\\d+B?(?=\\s|$)",
             "name": "constant.numeric"
@@ -301,8 +311,12 @@
                 }
             }
         },
+        "locals": {
+            "match": "(?<=^|\\s|\\[|\\{)(locals:)(?=\\s|$)",
+            "name": "keyword"
+        },
         "control-flow": {
-            "match": "(?<=^|\\s|\\[|\\{)(?:if;?|else|;?then|;;;?|null;|again|while|repeat)(?=\\s|$)",
+            "match": "(?<=^|\\s|\\[|\\{)(?:if;?|else|;?then|;;;?|null;|again|while|repeat|recurse)(?=\\s|$)",
             "name": "keyword.control"
         },
         "conditional-comp": {
