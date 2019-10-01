@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.1
+
+- Added `public` and `private` to interpret state keyword list
+
 ## 0.2.0
 
 - Added "Open Core Libraries" command

@@ -9,9 +9,6 @@
         "interpret-mode": {
             "patterns": [
                 {
-                    "include": "#locals"
-                },
-                {
                     "include": "#literals"
                 },
                 {
@@ -22,6 +19,9 @@
                 },
                 {
                     "include": "#declarations"
+                },
+                {
+                    "include": "#declaration-adjs"
                 },
                 {
                     "include": "#defers"
@@ -311,8 +311,8 @@
                 }
             }
         },
-        "locals": {
-            "match": "(?<=^|\\s|\\[|\\{)(locals:)(?=\\s|$)",
+        "declaration-adjs": {
+            "match": "(?<=^|\\s|\\[|\\{)(public|private|locals:)(?=\\s|$)",
             "name": "keyword"
         },
         "control-flow": {
