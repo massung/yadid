@@ -12,7 +12,7 @@
 		"url": "https://github.com/massung/yadid.git"
 	},
 	"description": "8th language support for VSCode",
-	"version": "0.1.5",
+	"version": "0.2.0",
 	"engines": {
 		"vscode": "^1.38.0"
 	},
@@ -23,7 +23,9 @@
 		"onCommand:yadid.run.file",
 		"onCommand:yadid.run.fileWithArgs",
 		"onCommand:yadid.build.project",
-		"onCommand:yadid.build.projectWithGUI"
+		"onCommand:yadid.build.projectWithGUI",
+		"onCommand:yadid.open.libs",
+		"onCommand:yadid.open.libs.core"
 	],
 	"keywords": [
 		"8th",
@@ -55,6 +57,16 @@
 				"command": "yadid.build.projectWithGUI",
 				"title": "Launch Build GUI",
 				"when": "editorLangId == '8th'",
+				"category": "8th"
+			},
+			{
+				"command": "yadid.open.libs.core",
+				"title": "Open Core Libraries Folder",
+				"category": "8th"
+			},
+			{
+				"command": "yadid.open.libs",
+				"title": "Open Libraries Folder",
 				"category": "8th"
 			}
 		],

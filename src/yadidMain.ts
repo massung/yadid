@@ -18,12 +18,38 @@ export function activate(context: vscode.ExtensionContext) {
 	vscode.commands.registerCommand('yadid.run.fileWithArgs', yadidRunFileWithArgs);
 	vscode.commands.registerCommand('yadid.build.project', yadidBuildProject);
 	vscode.commands.registerCommand('yadid.build.projectWithGUI', yadidBuildProjectWithGUI);
+	vscode.commands.registerCommand('yadid.open.libs', yadidOpenLibraries)
+	vscode.commands.registerCommand('yadid.open.libs.core', yadidOpenCoreLibraries)
 }
 
 /* Extension in unloading, do cleanup work here.
  */
 export function deactivate() {
 	// TODO:
+}
+
+/* Open a new window to the EIGHTHLIB libraries folder.
+ */
+export function yadidOpenLibraries() {
+	let path = process.env['EIGHTHLIB'];
+
+	if (!path) {
+		vscode.window.showErrorMessage(`No 'EIGHTHLIB' environment variable set`);
+	} else {
+		openFolder(join(path, 'libs'));
+	}
+}
+
+/* Open a new window to the core libraries folder.
+ */
+export function yadidOpenCoreLibraries() {
+	let path = find8th();
+
+	if (!path) {
+		vscode.window.showErrorMessage(`No '8th' binary found in PATH`);
+	} else {
+		openFolder(join(path, '../../../libs'));
+	}
 }
 
 /* Find the 8th executable in the PATH, if it exists, run the file.
@@ -211,4 +237,13 @@ function buildProject(buildBinary: string, folder: vscode.WorkspaceFolder, flags
 		terminal.show();
 		terminal.sendText(`8th ${buildBinary} ${flags} "${folder.uri.fsPath}"`, true);
 	}
+}
+
+/* Open a new window with the folder as the project.
+ */
+function openFolder(folder: string) {
+	let uri = vscode.Uri.file(folder);
+
+	// create a new window with the core libs folder
+	vscode.commands.executeCommand('vscode.openFolder', uri, true);
 }

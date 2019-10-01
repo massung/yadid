@@ -11,6 +11,8 @@ Forth - and its derivatives - are actually quite frustrating to make an effectiv
 * Context-aware syntax highlighting
 * Quick running of the current file as an 8th script
 * Building the project in the current workspace
+* Opening build GUI for current workspace
+* Open new editor window to core/user libraries folder
 
 ### Context-Aware Syntax Highlighting
 
@@ -37,6 +39,10 @@ The currently open file can be run as an 8th script with the "Run File" command 
 ### Project Building
 
 If open in an Workspace and there is a 8th build project setup in the folder, then the "Build Project" (`Ctrl-Shift-B`) command can be used to build it. Likewise, the "Launch Build GUI" command can be used to start the 8th build GUI to create a project, change its configuration, or build it.
+
+### Opening Libraries
+
+Quite often you want to either look at a library for reference or need to make quick edits in one of your own libraries. The "Open Libaries Folder" and "Open Core Libraries Folder" command palette actions will launch a new VSCode window and immediately open the libraries folder you selected. The core libraries folder is always considered to be relative to the `8th` executable, which the user libraries folder is relative to the `EIGHTHLIB` environment variable.
 
 ## Requirements
 

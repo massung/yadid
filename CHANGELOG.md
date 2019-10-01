@@ -2,6 +2,11 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.0
+
+- Added "Open Core Libraries" command
+- Added "Open Libraries" command
+
 ## 0.1.5
 
 - Added `locals:` to interpret state keyword list
