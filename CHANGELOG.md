@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.2
+
+- Added `while!` to control flow words
+
 ## 0.2.1
 
 - Added `public` and `private` to interpret state keyword list
