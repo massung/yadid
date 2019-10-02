@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.4
+
+- Added `until` and `until!` to control flow words
+
 ## 0.2.3
 
 - Fixed quotations in strings

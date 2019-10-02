@@ -325,7 +325,7 @@
             "name": "keyword"
         },
         "control-flow": {
-            "match": "(?<=^|\\s|\\[|\\{)(?:if;?|else|;?then|;;;?|null;|again|while!?|repeat|recurse)(?=\\s|$)",
+            "match": "(?<=^|\\s|\\[|\\{)(?:if;?|else|;?then|;;;?|null;|again|while!?|until!?|repeat|recurse)(?=\\s|$)",
             "name": "keyword.control"
         },
         "conditional-comp": {
