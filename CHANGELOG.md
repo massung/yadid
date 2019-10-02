@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.3
+
+- Fixed quotations in strings
+
 ## 0.2.2
 
 - Added `while!` to control flow words

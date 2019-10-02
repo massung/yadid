@@ -271,8 +271,17 @@
             "name": "constant.numeric"
         },
         "strings": {
-            "match": "\"(?:\\\"|[^\"])*?\"",
-            "name": "string.quoted.double"
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double",
+            "patterns": [
+                {
+                    "include": "#string-chars"
+                }
+            ]
+        },
+        "string-chars": {
+            "match": "\\\\.|."
         },
         "regexps": {
             "match": "/(?:/|\\S(?:\\.|[^/])*)/",
