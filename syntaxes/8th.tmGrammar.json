@@ -33,6 +33,9 @@
                     "include": "#words"
                 },
                 {
+                    "include": "#immediate"
+                },
+                {
                     "include": "#with-ns"
                 },
                 {
@@ -119,8 +122,30 @@
             ]
         },
         "words": {
-            "begin": "(?<=^|\\s|\\[|\\{)(i?:)\\s+([^/\"\\[\\{]\\S*)",
+            "begin": "(?<=^|\\s|\\[|\\{)(:)\\s+([^/\"\\[\\{]\\S*)",
             "end": "(?<=^|\\s|\\[|\\{)(;)(?=\\s|$)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#compile-mode"
+                }
+            ]
+        },
+        "immediate": {
+            "begin": "(?<=^|\\s|\\[|\\{)(i:)\\s+([^/\"\\[\\{]\\S*)",
+            "end": "(?<=^|\\s|\\[|\\{)(i;)(?=\\s|$)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword"
@@ -216,7 +241,7 @@
             ]
         },
         "comments": {
-            "match": "(?:\\\\|--)(?:\\s+([wsd]:)(\\s.*|$))?(?:\\s.*|$)",
+            "match": "(?<=^|\\s|\\[|\\{)(?:\\\\|--)(?:\\s+([wsd]:)(\\s.*|$))?(?:\\s.*|$)",
             "name": "comment.line",
             "captures": {
                 "1": {

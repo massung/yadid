@@ -2,6 +2,11 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.5
+
+- Added `i;` and made a complete pairing with `i:`
+- Fixed `\` comment syntax
+
 ## 0.2.4
 
 - Added `until` and `until!` to control flow words
