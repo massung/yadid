@@ -33,9 +33,6 @@
                     "include": "#words"
                 },
                 {
-                    "include": "#immediate"
-                },
-                {
                     "include": "#with-ns"
                 },
                 {
@@ -123,29 +120,7 @@
         },
         "words": {
             "begin": "(?<=^|\\s|\\[|\\{)(:)\\s+([^/\"\\[\\{]\\S*)",
-            "end": "(?<=^|\\s|\\[|\\{)(;)(?=\\s|$)",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword"
-                },
-                "2": {
-                    "name": "entity.name.function"
-                }
-            },
-            "endCaptures": {
-                "1": {
-                    "name": "keyword"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "#compile-mode"
-                }
-            ]
-        },
-        "immediate": {
-            "begin": "(?<=^|\\s|\\[|\\{)(i:)\\s+([^/\"\\[\\{]\\S*)",
-            "end": "(?<=^|\\s|\\[|\\{)(i;)(?=\\s|$)",
+            "end": "(?<=^|\\s|\\[|\\{)(i?;)(?=\\s|$)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword"
@@ -286,7 +261,7 @@
             "name": "constant.language"
         },
         "xts": {
-            "match": "(?<=^|\\s|\\[|\\{)('|p:)\\s+([^/\"\\[\\{]\\S*)",
+            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
                 "1": {
                     "name": "keyword"

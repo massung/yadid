@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.7
+
+- Fixed semantics of `i:` and `i;`
+
 ## 0.2.6
 
 - Added `#!` comment support
