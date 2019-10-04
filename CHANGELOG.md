@@ -2,6 +2,11 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.6
+
+- Added `#!` comment support
+- Added `0;` control flow word
+
 ## 0.2.5
 
 - Added `i;` and made a complete pairing with `i:`
