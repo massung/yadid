@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.8
+
+- Added `alias:` and `l:` immediate words
+
 ## 0.2.7
 
 - Fixed semantics of `i:` and `i;`

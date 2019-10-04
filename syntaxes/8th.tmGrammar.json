@@ -261,7 +261,7 @@
             "name": "constant.language"
         },
         "xts": {
-            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:)\\s+([^/\"\\[\\{]\\S*)",
+            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:|l:|alias:)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
                 "1": {
                     "name": "keyword"
