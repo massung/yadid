@@ -2,6 +2,11 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.9
+
+- Added `actor:`, `func:`, and `curry:`
+- Added support for multi-line comments via `(*`
+
 ## 0.2.8
 
 - Added `alias:` and `l:` immediate words

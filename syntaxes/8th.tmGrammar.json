@@ -221,6 +221,9 @@
                     "include": "#comment"
                 },
                 {
+                    "include": "#multi-line"
+                },
+                {
                     "include": "#hashbang"
                 },
                 {
@@ -231,6 +234,16 @@
         "comment": {
             "match": "(?<=^|\\s|\\[|\\{)\\\\(?:\\s.*|$)",
             "name": "comment.line"
+        },
+        "multi-line": {
+            "begin": "(?<=^|\\s|\\[|\\{)\\(\\*(?:\\s.*|$)",
+            "end": "\\*\\)",
+            "name": "comment.line",
+            "patterns": [
+                {
+                    "include": "#multi-line"
+                }
+            ]
         },
         "hashbang": {
             "match": "(?<=^|\\s|\\[|\\{)#!(?:\\s+(\\S*)(\\s.*|$))?(?:\\s.*|$)",
@@ -261,7 +274,7 @@
             "name": "constant.language"
         },
         "xts": {
-            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:|l:|alias:)\\s+([^/\"\\[\\{]\\S*)",
+            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:|l:|alias:|actor:|curry:|func:)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
                 "1": {
                     "name": "keyword"
