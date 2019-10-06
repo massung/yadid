@@ -2,6 +2,12 @@
 
 Any notable changes each release/update will be kept here.
 
+## 0.2.10
+
+- Removed `actor:` and `curry:` as they are not "defining"
+- Moved `func:` to only in interpret mode
+- Fixed multi-line comments
+
 ## 0.2.9
 
 - Added `actor:`, `func:`, and `curry:`

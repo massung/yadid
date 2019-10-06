@@ -24,6 +24,9 @@
                     "include": "#declaration-adjs"
                 },
                 {
+                    "include": "#ffi-funcs"
+                },
+                {
                     "include": "#defers"
                 },
                 {
@@ -236,7 +239,7 @@
             "name": "comment.line"
         },
         "multi-line": {
-            "begin": "(?<=^|\\s|\\[|\\{)\\(\\*(?:\\s.*|$)",
+            "begin": "(?<=^|\\s|\\[|\\{)\\(\\*(?:\\s|$)",
             "end": "\\*\\)",
             "name": "comment.line",
             "patterns": [
@@ -274,7 +277,7 @@
             "name": "constant.language"
         },
         "xts": {
-            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:|l:|alias:|actor:|curry:|func:)\\s+([^/\"\\[\\{]\\S*)",
+            "match": "(?<=^|\\s|\\[|\\{)('|i:|p:|l:|alias:)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
                 "1": {
                     "name": "keyword"
@@ -359,6 +362,17 @@
                 },
                 "2": {
                     "name": "variable.parameter"
+                }
+            }
+        },
+        "ffi-funcs": {
+            "match": "(?:^|\\s|\\[|\\{)(func:)\\s+([^/\"\\[\\{]\\S*)",
+            "captures": {
+                "1": {
+                    "name": "keyword"
+                },
+                "2": {
+                    "name": "entity.name.function"
                 }
             }
         },
