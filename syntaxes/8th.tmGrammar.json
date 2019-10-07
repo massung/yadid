@@ -46,6 +46,9 @@
         "compile-mode": {
             "patterns": [
                 {
+                    "include": "#SED"
+                },
+                {
                     "include": "#literals"
                 },
                 {
@@ -261,7 +264,7 @@
             }
         },
         "docstring": {
-            "match": "(?<=^|\\s|\\[|\\{)--(?:\\s+([wsd]:)(\\s.*|$))?(?:\\s.*|$)",
+            "match": "(?<=^|\\s|\\[|\\{)--(?:\\s+([a-zA-Z]+:)(\\s.*|$))?(?:\\s.*|$)",
             "name": "comment.line",
             "captures": {
                 "1": {
@@ -355,7 +358,7 @@
             }
         },
         "declarations": {
-            "match": "(?:^|\\s|\\[|\\{)(var,?|constant)\\s+([^/\"\\[\\{]\\S*)",
+            "match": "(?:^|\\s|\\[|\\{)(var,?|constant|actor:)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
                 "1": {
                     "name": "keyword"
@@ -401,6 +404,31 @@
                     "name": "variable.language"
                 }
             }
+        },
+        "SED": {
+            "begin": "(?<=^|\\s|\\[|\\{)(SED:)(?=\\s|$)",
+            "end": "$",
+            "captures": {
+                "1": {
+                    "name": "markup.heading.1"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#types"
+                },
+                {
+                    "include": "#stack-notation"
+                }
+            ]
+        },
+        "types": {
+            "match": "(?<=^|\\s|\\[|\\{)(?:a|T|b|c|cr|d|db|f|font|G|gr|hw|h|img|m|mat|net|n|ptr|q|r|sio|snd|sql|st|s|t|v|w|x|xml)\\d*(?=\\s|$)",
+            "name": "entity.name.type"
+        },
+        "stack-notation": {
+            "match": "(?<=^|\\s|\\[|\\{)--(?=\\s|$)",
+            "name": "comment.block.documentation"
         }
     }
 }

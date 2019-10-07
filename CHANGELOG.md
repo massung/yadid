@@ -1,6 +1,15 @@
 # Change Log
 
-Any notable changes each release/update will be kept here.
+- Any notable changes each release/update will be kept here
+
+## 0.3.0
+
+- Added `SED:` comment in compile-mode
+
+## 0.2.11
+
+- Allow for any letters as markup headers for docstrings
+- Added `actor:` in interpet-mode akin to `var`
 
 ## 0.2.10
 
