@@ -1,6 +1,6 @@
 # Change Log
 
-- Any notable changes each release/update will be kept here
+Any notable changes each release/update will be kept here
 
 ## 0.3.1
 
