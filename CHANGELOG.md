@@ -2,6 +2,10 @@
 
 - Any notable changes each release/update will be kept here
 
+## 0.3.1
+
+- Fixed `g` type in `SED:` comments
+
 ## 0.3.0
 
 - Added `SED:` comment in compile-mode
