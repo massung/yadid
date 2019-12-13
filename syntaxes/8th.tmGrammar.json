@@ -423,7 +423,7 @@
             ]
         },
         "types": {
-            "match": "(?<=^|\\s|\\[|\\{)(?:a|T|b|c|cr|d|db|f|font|G|gr|hw|h|img|m|mat|net|n|ptr|q|r|sio|snd|sql|st|s|t|v|w|x|xml)\\d*(?=\\s|$)",
+            "match": "(?<=^|\\s|\\[|\\{)(?:a|T|b|c|cr|d|db|f|font|g|gr|hw|h|img|m|mat|net|n|ptr|q|r|sio|snd|sql|st|s|t|v|w|x|xml)\\d*(?=\\s|$)",
             "name": "entity.name.type"
         },
         "stack-notation": {
