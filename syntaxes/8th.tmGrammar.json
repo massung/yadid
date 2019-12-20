@@ -336,7 +336,7 @@
             "name": "string.regexp"
         },
         "needs": {
-            "match": "(?:^|\\s|\\[|\\{)(ns:|needs)\\s+([^/\"\\[\\{]\\S*)",
+            "match": "(?:^|\\s|\\[|\\{)(ns:|needs|requires)\\s+([^/\"\\[\\{]\\S*)",
             "captures": {
                 "1": {
                     "name": "keyword"
