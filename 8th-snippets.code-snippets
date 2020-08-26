@@ -52,7 +52,7 @@
 	},
 	"mode line": {
 		"prefix": "mod",
-		"body": "\ -*- 8th -*-",
+		"body": "\\ -*- 8th -*-",
 		"$0"
 	}
 }
