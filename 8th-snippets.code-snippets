@@ -37,13 +37,15 @@
 			"$0"
 		]
 	},
-	"word definitiom": {
+	"word definition": {
 		"scope": "8th",
 		"prefix": "def",
 		"body": [
-			"\\ ${1:description}",
-			": ${2:word} \\ ${3:before} -- ${4:after} ",
-			"\t${5:definition} ;",
+			"-- w: ${1:word}",
+			"-- s: ${2:before} -- ${3:after}",
+			"-- d: ${4:description}",
+			": ${5:word} ",
+			"\t${6:definition} ;",
 			"",
 			"$0"
 		]
