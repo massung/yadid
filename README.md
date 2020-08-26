@@ -13,6 +13,7 @@ Forth - and its derivatives - are actually quite frustrating to make an effectiv
 * Building the project in the current workspace
 * Opening build GUI for current workspace
 * Open new editor window to core/user libraries folder
+* Code snippets
 
 ### Context-Aware Syntax Highlighting
 

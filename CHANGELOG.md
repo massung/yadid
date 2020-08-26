@@ -2,6 +2,10 @@
 
 Any notable changes each release/update will be kept here
 
+## 0.4.0
+
+- Snippets support added, provided by @mofrisch. Thank you!
+
 ## 0.3.2
 
 - Added `requires` as a keyword
