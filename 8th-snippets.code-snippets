@@ -53,5 +53,6 @@
 	"mode line": {
 		"prefix": "mod",
 		"body": "\ -*- 8th -*-",
+		"$0"
 	}
 }
