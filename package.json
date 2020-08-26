@@ -92,7 +92,8 @@
 				"id": "8th",
 				"extensions": [
 					".8th"
-				]
+				],
+				"configuration": "language-configuration.json"
 			}
 		],
 		"grammars": [
@@ -100,6 +101,12 @@
 				"language": "8th",
 				"scopeName": "source.8th",
 				"path": "./syntaxes/8th.tmGrammar.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "8th",
+				"path": "8th-snippets.code-snippets"
 			}
 		]
 	},

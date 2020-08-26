@@ -1,0 +1,42 @@
+{
+    "brackets": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "comments": {
+        "blockComment": [
+            "(*",
+            "*)"
+        ],
+        "lineComment": "\\"
+    },
+    "wordPattern": "\\S+",
+    "autoClosingPairs": [
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "( ",
+            "close": ")"
+        },
+        {
+            "open": "(*",
+            "close": " *)"
+        }
+    ]
+}

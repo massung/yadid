@@ -18,8 +18,8 @@ export function activate(context: vscode.ExtensionContext) {
 	vscode.commands.registerCommand('yadid.run.fileWithArgs', yadidRunFileWithArgs);
 	vscode.commands.registerCommand('yadid.build.project', yadidBuildProject);
 	vscode.commands.registerCommand('yadid.build.projectWithGUI', yadidBuildProjectWithGUI);
-	vscode.commands.registerCommand('yadid.open.libs', yadidOpenLibraries)
-	vscode.commands.registerCommand('yadid.open.libs.core', yadidOpenCoreLibraries)
+	vscode.commands.registerCommand('yadid.open.libs', yadidOpenLibraries);
+	vscode.commands.registerCommand('yadid.open.libs.core', yadidOpenCoreLibraries);
 }
 
 /* Extension in unloading, do cleanup work here.
@@ -109,7 +109,7 @@ export function yadidBuildProject(gui: boolean = false) {
 					} else {
 						vscode.window.showErrorMessage(`No workspace open`);
 					}
-				})
+				});
 		}
 	}
 }
@@ -117,7 +117,7 @@ export function yadidBuildProject(gui: boolean = false) {
 /* Launch the build GUI instead of just building via terminal.
  */
 export function yadidBuildProjectWithGUI() {
-	yadidBuildProject(true)
+	yadidBuildProject(true);
 }
 
 /* Looks for the 8th executable in the path, returns the first one it finds.
@@ -128,7 +128,7 @@ function find8th(): string | undefined {
 	let app = '8th';
 
 	// on windows, the 8th executable has a file extension
-	if (process.platform == 'win32') {
+	if (process.platform === 'win32') {
 		app += '.exe';
 	}
 
@@ -166,7 +166,7 @@ function getCurrentWorkspaceFolder(): Thenable<vscode.WorkspaceFolder | undefine
 	let editor = vscode.window.activeTextEditor;
 
 	// must have an open workspace
-	if (!folders || folders.length == 0) {
+	if (!folders || folders.length === 0) {
 		return Promise.resolve(undefined);
 	}
 
@@ -181,12 +181,12 @@ function getCurrentWorkspaceFolder(): Thenable<vscode.WorkspaceFolder | undefine
 					}
 				});
 		} else {
-			return Promise.resolve(vscode.workspace.getWorkspaceFolder(editor.document.uri))
+			return Promise.resolve(vscode.workspace.getWorkspaceFolder(editor.document.uri));
 		}
 	}
 
 	// if there's only 1 workspace, use it
-	if (folders.length == 1) {
+	if (folders.length === 1) {
 		return Promise.resolve(folders[0]);
 	}
 
